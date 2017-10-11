@@ -7,7 +7,8 @@
           .col-md-6.justify-content-center
             h2.slide-title {{ slide.title }}
             small {{ slide.text }}
-            button.btn.call-to-action(href='#') {{slide.buttonText}}
+            .row.justify-content-center.button-container
+              button.btn.call-to-action(href='#') {{slide.buttonText}}
           .col-md-6
     ul.slide-indicator
       li.indicator-item(v-for="indicator in indicators")
@@ -42,6 +43,10 @@
     name: 'slide',
     components: {
       StrokeLine
+    },
+    mounted() {
+      let img = '@/assets/img/mybanne.jpg'
+      $('.slide').css("background-img", `url(${img})`);
     },
     data() {
       return {

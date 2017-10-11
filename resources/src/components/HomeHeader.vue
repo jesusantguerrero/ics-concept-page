@@ -1,5 +1,6 @@
 <template lang="pug">
   .header-container
+    .top-header.row
     header.row
       .brand-name
         h1: a(href="#", class="text") ICS Services
@@ -20,12 +21,15 @@
     position: fixed
     width: 100%
     z-index: 100
+  .top-header
+    height: 20px
+    background: whitesmoke
   header.row
     width: 100%
     margin: 0
     padding: 15px 50px
     background: #fff
-    height: 80px
+    height: 70px
     box-shadow: 1px 2px 2px #ddd
     display: flex
     align-content: center

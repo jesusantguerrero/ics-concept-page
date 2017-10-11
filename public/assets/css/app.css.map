@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./resources/src/modules/app/App.vue"],"names":[],"mappings":"AACA,yBACE,UAAe","file":"assets/css/app.css","sourcesContent":["\n#app h1[data-v-44cea938] {\n  color: #00ff00;\n}\n\n\n\n// WEBPACK FOOTER //\n// ./resources/src/modules/app/App.vue"],"sourceRoot":""}

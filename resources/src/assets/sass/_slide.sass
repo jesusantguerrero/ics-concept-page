@@ -47,6 +47,7 @@ $slide-time: 30s
     color: $primary-color
     animation: slide-title-in $slide-time/3 linear infinite
     opacity: 0
+    margin-bottom: 2px
 
   div
     width: 100%
@@ -54,7 +55,8 @@ $slide-time: 30s
 
   div:nth-child(1)
     padding: 50px 0
-
+.button-container
+  margin: 15px 0
 
 .slide-indicator
   +makeFlex(200px,row ,flex-start,flex-end)
@@ -144,22 +146,8 @@ $slide-time: 30s
   100%
     opacity: 0
 
-.half
-  width: 50%
-  height: 60%
-.a-down
-  display: flex
-  justify-content: center
-  align-items: flex-end
-
-.a-center
-  display: flex
-  flex-direction: column
-  align-items: center
-
 .btn,
 .call-to-action
-  display: block
   min-width: 200px
   text-align: center
   background: transparentize($contrast-color, .4)
@@ -170,9 +158,9 @@ $slide-time: 30s
   padding: 10px 0
   border: 2px solid $primary-color
   border-radius: 3px
-
   &:hover
     background: lighten($contrast-color,5%)
+  .button-container
 
 /* smartphone
 @media (max-width: 768px)
@@ -194,4 +182,4 @@ $slide-time: 30s
     font-size: 20px
 
   .slide-text
-    padding: 0 10px
+    padding: 90px 10px 20px 10px

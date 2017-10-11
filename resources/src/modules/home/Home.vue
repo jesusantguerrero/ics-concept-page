@@ -4,26 +4,40 @@
     Slide
     .content-part#somos
       h2.content-title Nuestra Empresa
+      h4.content-subtitle Nuestra Empresa
     .content-part#somos
       h2.content-title Servicios
+      h4.content-subtitle Descubre los Servicios Que tenemos para ti
+      HomeServices
+    .content-part#comercial
+      h2.content-title El precio que ves es el precio que pagas, tarifas mas bajas... misma calidad
+
+    .content-part#somos
+      h2.content-title Beneficios
     .content-part#somos
       h2.content-title Cobertura
+      h4.content-subtitle Cobertura
     .content-part#somos
       h2.content-title Vistanos
     .content-part#somos
       h2.content-title Contactanos
-
+      h4.content-subtitle Contactanos
+    HomeFooter
 </template>
 
 <script>
   import HomeHeader from '@/components/HomeHeader';
   import Slide from '@/components/Slide';
+  import HomeServices from '@/components/HomeServices';
+  import HomeFooter from '@/components/HomeFooter';
 
   export default {
     name: 'home',
     components: {
       HomeHeader,
-      Slide
+      Slide,
+      HomeFooter,
+      HomeServices
     },
     data() {
       return {
@@ -66,13 +80,27 @@
     -moz-osx-font-smoothing: grayscale
     color: #2c3e50
     heigth: 100vh
+    background: #fdfdfd
 
-  .content-title
+  .content-title,
+  .content-subtitle
     text-align: center
-    margin-bottom: 15px
+    margin-top: 20px
+    margin-bottom: 5px
     color: $contrast-color
+  .content-subtitle
+    color: #2c3e50
+    margin-bottom: 15px
   .content-part
     margin-top: 50px
+    padding: 20px
+  #comercial
+    background: $contrast-color
+    color: white
+    height: 400px
+    .content-title,
+    .content-subtitle
+      color: white
   @media (max-width: 768)
     heigth: fix-content
 </style>
