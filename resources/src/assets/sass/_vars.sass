@@ -1,0 +1,14 @@
+$primary-color: #348AFE
+$light-color: lighten(dodgerblue, 25%)
+$contrast-color: #FE6534
+$dark-color: #272727
+
+=makeFlex($width: 100%,$direction: row,$justify: flex-start,$align: flex-start)
+  width: $width
+  display: flex
+  flex-direction: $direction
+  justify-content: $justify
+  align-items: $align
+
+=content-padding($padding: $page-content-padding)
+  padding: 0 $padding

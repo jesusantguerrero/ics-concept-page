@@ -28,10 +28,10 @@ class App extends CI_Controller {
     $this->parser->parse('admin/layouts/footer',$data);
   }
 
-  public function login($page = 'login')
+  public function login($page = 'home')
   {
     $data = $this->defineData($page);
-    $this->parser->parse('login',$data);
+    $this->parser->parse('home',$data);
   }
 
 

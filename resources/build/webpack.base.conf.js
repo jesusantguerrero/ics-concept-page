@@ -9,7 +9,7 @@ var modules = `${resolve('src')}/modules/`
 
 module.exports = {
   entry: {
-    login: `${modules}login/index.js`,
+    home: `${modules}home/index.js`,
     app: `${modules}app/index.js`,
   },
   output: {

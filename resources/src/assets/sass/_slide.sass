@@ -1,0 +1,197 @@
+//  base styles
+
+$slide-time: 30s
+
+/* slide styles
+*
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+
+.slide
+  color: #ddd
+  width: 100%
+  height: 90vh
+  overflow: hidden
+  position: relative
+  z-index: 1
+  box-shadow: 1px 5px 4px  rgba(0,0,0,.4)
+
+.slide-show
+  display: flex
+  width: 300vw
+  height: 100%
+  overflow: hidden
+  position: absolute
+  animation: slideshow $slide-time ease-in infinite
+
+.slide-item
+  +makeFlex(100%,row,center,center)
+  padding: 0
+  position: relative
+
+  img
+    width: 100%
+    height: 100%
+
+.slide-text
+  +makeFlex(100%,row,center, center)
+  padding: 0 50px
+  height: 100%
+  background: transparentize(#222,.2)
+  padding-bottom: 10px
+  font:
+    size: 30px
+
+  .slide-title
+    color: $primary-color
+    animation: slide-title-in $slide-time/3 linear infinite
+    opacity: 0
+
+  div
+    width: 100%
+    text-align: center
+
+  div:nth-child(1)
+    padding: 50px 0
+
+
+.slide-indicator
+  +makeFlex(200px,row ,flex-start,flex-end)
+  position: absolute
+  bottom: 5%
+  left: 100px
+
+  .indicator-item
+    height: 3px
+    width: 100%
+    margin: 0 5px
+    background: transparentize($primary-color,.7)
+    list-style: none
+
+
+[rol="low-indicator"]
+  display: block
+  height: 100%
+  width: 0
+  background: $primary-color
+
+.indicator-one
+  animation: indicator-one $slide-time linear infinite
+
+.indicator-two
+  animation: indicator-two $slide-time linear infinite
+
+.indicator-three
+  animation: indicator-three $slide-time linear infinite
+
+.indicator-four
+  animation: indicator4
+
+.blur-slide
+  filter: blur(3px)
+
+
+@keyframes slideshow
+  0%
+    left: 0
+  33%
+    left: 0
+  36%
+    left: -100vw
+  63%
+    left: -100vw
+  66%
+    left: -200vw
+  96%
+    left: -200vw
+  100%
+    left: 0
+
+@keyframes indicator-one
+  0%
+    width: 0
+  35%
+    width: 100%
+  99%
+    width: 100%
+
+@keyframes indicator-two
+  0%
+    width: 0
+  36%
+    width: 0
+  65%
+    width: 100%
+  99%
+    width: 100%
+
+@keyframes indicator-three
+  0%
+    width: 0
+  66%
+    width: 0
+  99%
+    width: 100%
+
+@keyframes slide-title-in
+  3%
+    opacity: 0
+  25%
+    opacity: 1
+  90%
+    opacity: 1
+  100%
+    opacity: 0
+
+.half
+  width: 50%
+  height: 60%
+.a-down
+  display: flex
+  justify-content: center
+  align-items: flex-end
+
+.a-center
+  display: flex
+  flex-direction: column
+  align-items: center
+
+.btn,
+.call-to-action
+  display: block
+  min-width: 200px
+  text-align: center
+  background: transparentize($contrast-color, .4)
+  height: 48px
+  font-size: 16px
+  text-decoration: none
+  color: #fff
+  padding: 10px 0
+  border: 2px solid $primary-color
+  border-radius: 3px
+
+  &:hover
+    background: lighten($contrast-color,5%)
+
+/* smartphone
+@media (max-width: 768px)
+  .slide
+    width: 100%
+    height: 80vh
+    overflow: hidden
+    position: relative
+    z-index: 1
+
+    .indicator-item
+      height: 2px
+
+  .slide-indicator
+    width: 80%
+    left: 10%
+
+  .slide-title
+    font-size: 20px
+
+  .slide-text
+    padding: 0 10px
