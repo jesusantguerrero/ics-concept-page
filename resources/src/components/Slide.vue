@@ -26,15 +26,15 @@
   const slides = [
     {
       title: 'Island Communication Services',
-      text: 'Coleccion de marcadores para aprender tecnologias web',
+      text: 'Nuestra meta es brindar internet a un mejor costo',
       buttonText: 'La Empresa'
     }, {
       title: 'Servicios',
-      text: 'Has escuchado hablar de Electron?',
+      text: 'Tenemos varios planes economicos y potentes',
       buttonText: 'Ver Servcios'
     }, {
       title: 'Cobertura',
-      text: 'Increibles librerias(que quizá conozcas o no) te pueden ayudar',
+      text: 'Contamos con cobertura en La Romana y Villa Hermosa',
       buttonText: 'Ver Cobertura'
     }
   ];
