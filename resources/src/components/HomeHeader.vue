@@ -3,6 +3,7 @@
     .top-header.row
     header.row
       .brand-name
+        img(src="./../assets/img/logo.png").responsive-img
         h1: a(href="#", class="text") ICS Services
       .nav-container
         nav.main-nav
@@ -15,8 +16,7 @@
 </template>
 
 <style lang="sass"scoped>
-  @import  '../assets/sass/_base'
-
+  @import  '../assets/sass/_vars'
   .header-container
     position: fixed
     width: 100%
@@ -30,11 +30,13 @@
     padding: 15px 50px
     background: #fff
     height: 70px
-    box-shadow: 1px 2px 2px #ddd
+    box-shadow: 1px 2px 2px transparentize(#000, .8)
     display: flex
     align-content: center
     position: relative
-
+    .responsive-img
+      height: 100%
+      margin-right: 20px
     &:after
       content: ''
       height: 7px
@@ -43,6 +45,7 @@
       position: absolute
       bottom: -7px
       right: 0
+      box-shadow: 1px 2px 2px transparentze(#000, .8)
 
     .brand-name
       display: flex

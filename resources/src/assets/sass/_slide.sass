@@ -28,6 +28,7 @@ $slide-time: 30s
 .slide-item
   +makeFlex(100%,row,center,center)
   padding: 0
+  padding-top: 90px
   position: relative
 
   img
@@ -55,8 +56,8 @@ $slide-time: 30s
 
   div:nth-child(1)
     padding: 50px 0
-.button-container
-  margin: 15px 0
+  .button-container
+    margin: 25px 0
 
 .slide-indicator
   +makeFlex(200px,row ,flex-start,flex-end)
@@ -148,19 +149,18 @@ $slide-time: 30s
 
 .btn,
 .call-to-action
-  min-width: 200px
   text-align: center
+  padding: 0 15px
   background: transparentize($contrast-color, .4)
+  border: 1px solid transparentize($contrast-color, .4)
   height: 48px
   font-size: 16px
   text-decoration: none
   color: #fff
   padding: 10px 0
-  border: 2px solid $primary-color
   border-radius: 3px
   &:hover
     background: lighten($contrast-color,5%)
-  .button-container
 
 /* smartphone
 @media (max-width: 768px)

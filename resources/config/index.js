@@ -7,9 +7,9 @@ module.exports = {
     env: require('./prod.env'),
     index: `${rootDir}/application/views/layouts/index.php`,
     assetsRoot:`${rootDir}/public/`,
-    assetsSubDirectory: 'assets/',
+    assetsSubDirectory: 'assets',
+    assetsPublicPath: './',
 
-  assetsPublicPath: rootDir,
     productionSourceMap: true,
     // Gzip off by default as many popular static hosts such as
     // Surge or Netlify already gzip all static assets for you.
@@ -21,6 +21,6 @@ module.exports = {
     // View the bundle analyzer report after build finishes:
     // `npm run build --report`
     // Set to `true` or `false` to always turn it on or off
-    bundleAnalyzerReport: process.env.npm_config_report
+    bundleAnalyzerReport: false
   }
 }

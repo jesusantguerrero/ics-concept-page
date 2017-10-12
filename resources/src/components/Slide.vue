@@ -16,7 +16,7 @@
 </template>
 
 <style lang="sass">
-  @import '../assets/sass/_base.sass'
+  @import '../assets/sass/_vars.sass'
   @import '../assets/sass/_slide.sass'
 </style>
 
@@ -45,8 +45,8 @@
       StrokeLine
     },
     mounted() {
-      let img = '@/assets/img/mybanne.jpg'
-      $('.slide').css("background-img", `url(${img})`);
+      const img = './assets/img/mybanner.jpg';
+      $('.slide').css('background-image', `url(${img})`);
     },
     data() {
       return {

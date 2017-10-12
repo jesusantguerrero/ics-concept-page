@@ -5,21 +5,22 @@
     .content-part#somos
       h2.content-title Nuestra Empresa
       h4.content-subtitle Nuestra Empresa
-    .content-part#somos
+    .content-part#servcios
       h2.content-title Servicios
       h4.content-subtitle Descubre los Servicios Que tenemos para ti
       HomeServices
     .content-part#comercial
-      h2.content-title El precio que ves es el precio que pagas, tarifas mas bajas... misma calidad
+      p.remark-text El precio que ves es el precio que pagas
+      p.remark-text tarifas mas bajas... misma calidad
 
-    .content-part#somos
+    .content-part#sbeneficios
       h2.content-title Beneficios
-    .content-part#somos
+    .content-part#cobertura
       h2.content-title Cobertura
       h4.content-subtitle Cobertura
-    .content-part#somos
+    .content-part#vistanos
       h2.content-title Vistanos
-    .content-part#somos
+    .content-part#contactos
       h2.content-title Contactanos
       h4.content-subtitle Contactanos
     HomeFooter
@@ -94,13 +95,24 @@
   .content-part
     margin-top: 50px
     padding: 20px
+    text-align: center
   #comercial
     background: $contrast-color
+    display: flex
+    flex-direction: column
+    align-content: center
     color: white
     height: 400px
     .content-title,
     .content-subtitle
       color: white
-  @media (max-width: 768)
-    heigth: fix-content
+  .remark-text
+    font-size: 35px
+  @media (max-width: 768px)
+    .content-part
+      padding:
+        left: 5px
+        raight: 5px
+    .remark-text
+      font-size: 15px
 </style>

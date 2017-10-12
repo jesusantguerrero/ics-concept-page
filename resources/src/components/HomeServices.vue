@@ -31,7 +31,8 @@
     width: 100%
     max-width: 300px
     background: white
-    border: 1px solid #aaa
+    border: 1px solid #ccc
+    box-shadow: 2px 2px 4px transparentize(#272727, .8)
     height: 400px
     border-radius: 8px
     margin: auto
@@ -52,7 +53,7 @@
       color: white
       margin: 0 0 0 0
       font:
-        size: 90px
+        size: 70px
     .caption
       margin: 0 0 0 0
     .card-detalis
