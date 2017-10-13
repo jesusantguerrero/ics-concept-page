@@ -12,14 +12,14 @@
     .content-part#comercial
       p.remark-text El precio que ves es el precio que pagas
       p.remark-text tarifas mas bajas... misma calidad
-
     .content-part#sbeneficios
       h2.content-title Beneficios
     .content-part#cobertura
       h2.content-title Cobertura
       h4.content-subtitle Cobertura
-    .content-part#vistanos
-      h2.content-title Vistanos
+    .content-part.bg-primary#vistanos
+      h2.content-title Visitanos
+      HomeMap
     .content-part#contactos
       h2.content-title Contactanos
       h4.content-subtitle Contactanos
@@ -30,6 +30,7 @@
   import HomeHeader from '@/components/HomeHeader';
   import Slide from '@/components/Slide';
   import HomeServices from '@/components/HomeServices';
+  import HomeMap from '@/components/HomeMap';
   import HomeFooter from '@/components/HomeFooter';
 
   export default {
@@ -38,7 +39,8 @@
       HomeHeader,
       Slide,
       HomeFooter,
-      HomeServices
+      HomeServices,
+      HomeMap
     },
     data() {
       return {
@@ -92,10 +94,17 @@
   .content-subtitle
     color: #2c3e50
     margin-bottom: 15px
+    margn-top: 5px
   .content-part
-    margin-top: 50px
+    margin-top: 20px
     padding: 20px
     text-align: center
+  .bg-primary
+    background: $primary-color
+    min-height: 400px
+    .content-title,
+    .content-subtitle
+      color: white
   #comercial
     background: $contrast-color
     display: flex
@@ -112,7 +121,7 @@
     .content-part
       padding:
         left: 5px
-        raight: 5px
+        right: 5px
     .remark-text
       font-size: 15px
 </style>

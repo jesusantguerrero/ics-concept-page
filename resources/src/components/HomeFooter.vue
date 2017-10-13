@@ -2,9 +2,10 @@
   footer.site-footer.media-row
     .bigfooter
       article.page-info.col-md-7
-        a.foot-brand ICS
+        a.foot-brand
+          img(src="./../assets/img/logo_white.png").responsive-img
         .brand-description
-          p Island Communnication Services
+          p {{ appname }}
           p S.R.L
       article.foot-menu-container.col-md-5
         .network
@@ -21,7 +22,7 @@ export default {
   name: 'home-footer',
   data() {
     return {
-      appname: 'Island Communnication Services'
+      appname: 'Island Communication Services'
     };
   },
   methods: {
@@ -36,5 +37,9 @@ export default {
 <style lang="sass" scoped>
   @import '../assets/sass/_base'
   @import '../assets/sass/_footer'
+  .responsive-img
+    width: 160px
+    height: 150px
+    margin-right: 10px
 
 </style>

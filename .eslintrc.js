@@ -40,6 +40,7 @@ module.exports = {
   },
 
   globals: {
-    jquery: true
+    jquery: true,
+    google: true
   }
 }

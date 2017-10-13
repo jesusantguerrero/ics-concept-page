@@ -1,9 +1,9 @@
 <template lang="pug">
-  .header-container
+  .header-container.hide-xs
     .top-header.row
     header.row
       .brand-name
-        img(src="./../assets/img/logo.png").responsive-img
+        img(src="./../assets/img/logo.svg").responsive-img
         h1: a(href="#", class="text") ICS Services
       .nav-container
         nav.main-nav
@@ -15,7 +15,7 @@
           li: a(href="#contacto").nav-button Contacto
 </template>
 
-<style lang="sass"scoped>
+<style lang="sass">
   @import  '../assets/sass/_vars'
   .header-container
     position: fixed
@@ -24,6 +24,12 @@
   .top-header
     height: 20px
     background: whitesmoke
+    padding: 0 50px
+    text-align: right
+    border-bottom: 1px sold #ccc
+  .responsive-img
+    height: 120%
+    margin-right: 5px
   header.row
     width: 100%
     margin: 0
@@ -34,9 +40,6 @@
     display: flex
     align-content: center
     position: relative
-    .responsive-img
-      height: 100%
-      margin-right: 20px
     &:after
       content: ''
       height: 7px
@@ -75,17 +78,16 @@
       display: table-cell
       padding: 0 8px
   .nav-button
-    color: $dark-color
+    color: lighten($dark-color, 10%)
     display: block
-    font-size: 20px
+    font:
+      size: 22px
+      weight: bolder
     text-decoration: none
+    transition: all ease .5s
     &:hover
       text-decoration: none
       color: $contrast-color
-
-  .img-responsive
-    width: 100%
-    border-radius: 2px
 
   @media (max-width: 768px)
     header

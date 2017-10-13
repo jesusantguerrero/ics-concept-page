@@ -12,6 +12,7 @@
 <body>
   <div class="container-fluid" id="home">
   </div>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxbo8jtHUlXtuOnG1wT-YbWtISWVACm4g&libraries=places"></script>
   {js}
     <script src="{link}"></script>
   {/js}

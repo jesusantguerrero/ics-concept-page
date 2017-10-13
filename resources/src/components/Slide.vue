@@ -45,7 +45,7 @@
       StrokeLine
     },
     mounted() {
-      const img = './assets/img/mybanner.jpg';
+      const img = './assets/img/cropped-home.png';
       $('.slide').css('background-image', `url(${img})`);
     },
     data() {
