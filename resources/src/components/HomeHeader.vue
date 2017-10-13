@@ -13,6 +13,7 @@
           li: a(href="#cobertura").nav-button Cobertura
           li: a(href="#App").nav-button App
           li: a(href="#contacto").nav-button Contacto
+      .hamburger-menu: i.material-icons menu
 </template>
 
 <style lang="sass">
@@ -61,13 +62,17 @@
         &:hover
           color: $light-color
 
-  .nav-container
+  .nav-container,
+  .hamburger-menu
     display: flex
     justify-self: flex-end
     overflow: hidden
     align-self: flex-end
     margin-left: auto
     align-items: center
+
+  .hamburger-menu
+    display: none
 
   .main-nav
     display: table
@@ -90,9 +95,15 @@
       color: $contrast-color
 
   @media (max-width: 768px)
-    header
-      justify-content: center
-      text-align: center
+    header.row
+      justify-content: left
+      padding:
+       left: 5px
+       right: 5px
+    .nav-container
+      display: none
+    .hamburger-menu
+      display: block
 
 </style>
 

@@ -8,7 +8,8 @@
 
   .stroke-line
     display: flex
-    height: 10px
+    height: 7px
+    background: transparent
 
     .right
       justify-content: flex-end

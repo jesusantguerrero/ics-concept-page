@@ -14,7 +14,7 @@
           a(href="#").network-ic: span.icon.icon-play
           a(href="#").network-ic: span.icon.icon-facebook
     p.copyright-info {{ appname }} - &copy; {{ copyRightsYears() }}  All right reserved
-      | | Code and Design with  <span class="love"> &#x2764;</span>  by <span class="the-company"><a target="_blank" href="https://jesusantguerrero.com">Insane Code</a></span>
+      | | Code and Design with  <span class="love"> &#x2764;</span>  by <span class="the-company"><a target="_blank" href="https://jesusantguerrero.com">Insane Code (Jesus Guerrero)</a></span>
 </template>
 
 <script>

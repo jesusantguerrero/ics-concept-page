@@ -1,13 +1,13 @@
 const template = '<div class="imformation Window"><h2>%title%<h2></di>';
 const key = 'AIzaSyBxbo8jtHUlXtuOnG1wT-YbWtISWVACm4g';
-const places = ['ICS Services'];
+const places = ['La romana'];
 const placeholders = {
   title: '%title%'
 };
 
 const defaultConfig = {
   element: document.getElementById('map'),
-  image: './assets/img/map-marker.png',
+  image: './assets/img/logo.png',
   template,
   key,
   placeholders,
@@ -40,6 +40,7 @@ const mainMap = {
     this.infoWindows = [];
     window.mapBounds = new google.maps.LatLngBounds();
     this.count = 0;
+    this.searchPlace(places);
   },
 
   callback(results) {

@@ -82,6 +82,9 @@
     font:
       size: 18px
       weight: bolder
+  @media (max-width: 768px)
+    .service-card
+      height: 360px
 </style>
 
 <script>

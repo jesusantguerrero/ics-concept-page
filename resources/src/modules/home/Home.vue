@@ -2,36 +2,45 @@
   #home.content-fluid
     HomeHeader
     Slide
-    .content-part#somos
+    .content-part.bg-white#somos
       h2.content-title Nuestra Empresa
-      h4.content-subtitle Nuestra Empresa
-    .content-part#servcios
+      h4.content-subtitle Lema o eslogan de la empresa aqui
+      p.content-text {{ company.description }}
+      p.content-text {{ shortLorem(100) }}
+    StrokeLine
+    .content-part.bg-white#servicios
       h2.content-title Servicios
       h4.content-subtitle Descubre los Servicios Que tenemos para ti
       HomeServices
     .content-part#comercial
-      p.remark-text El precio que ves es el precio que pagas
-      p.remark-text tarifas mas bajas... misma calidad
+      p.remark-text Selecciona el servicio que prefieras y contactanos.
+      p.remark-text Se parte de nosotros
     .content-part#sbeneficios
       h2.content-title Beneficios
     .content-part#cobertura
       h2.content-title Cobertura
-      h4.content-subtitle Cobertura
-    .content-part.bg-primary#vistanos
+      h4.content-subtitle Cubrimos dos municipios de la provincia
+    .content-part.bg-primary#contactanos
       h2.content-title Visitanos
       HomeMap
-    .content-part#contactos
-      h2.content-title Contactanos
-      h4.content-subtitle Contactanos
     HomeFooter
 </template>
 
 <script>
   import HomeHeader from '@/components/HomeHeader';
   import Slide from '@/components/Slide';
+  import StrokeLine from '@/components/StrokeLine';
   import HomeServices from '@/components/HomeServices';
   import HomeMap from '@/components/HomeMap';
   import HomeFooter from '@/components/HomeFooter';
+
+  const company = {
+    description: `
+    dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+    Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+    Donec pede justo.`
+  };
 
   export default {
     name: 'home',
@@ -39,6 +48,7 @@
       HomeHeader,
       Slide,
       HomeFooter,
+      StrokeLine,
       HomeServices,
       HomeMap
     },
@@ -48,7 +58,8 @@
           nickname: '',
           password: '',
         },
-        appName: 'IC Payment 2',
+        company,
+        appName: 'ICS Services',
         appStatement: 'El Sistema',
         message: '',
         hasError: false,
@@ -70,6 +81,10 @@
         if (!data.password) return false;
         return true;
       },
+
+      shortLorem(wordNumber) {
+        return this.company.description.slice(0, wordNumber);
+      }
     },
   };
 </script>
@@ -81,9 +96,9 @@
     font-family: 'Avenir', Helvetica, Arial, sans-serif
     -webkit-font-smoothing: antialiased
     -moz-osx-font-smoothing: grayscale
-    color: #2c3e50
+    color: lighten($dark-color, 15%)
     heigth: 100vh
-    background: #fdfdfd
+    background: #fff
 
   .content-title,
   .content-subtitle
@@ -93,25 +108,33 @@
     color: $contrast-color
   .content-subtitle
     color: #2c3e50
-    margin-bottom: 15px
-    margn-top: 5px
+    margin-bottom: 25px
+    margin-top: 5px
   .content-part
     margin-top: 20px
     padding: 20px
+    paddng-bottom: 50px
     text-align: center
+  .content-text
+    padding: 20px 150px
+    font-size: 18px
+    color: lighten($dark-color, 25%)
+
   .bg-primary
     background: $primary-color
     min-height: 400px
     .content-title,
     .content-subtitle
       color: white
+  .bg-white
+    background: white
   #comercial
     background: $contrast-color
     display: flex
     flex-direction: column
     align-content: center
     color: white
-    height: 400px
+    height: 325px
     .content-title,
     .content-subtitle
       color: white
@@ -122,6 +145,14 @@
       padding:
         left: 5px
         right: 5px
-    .remark-text
-      font-size: 15px
+    .remark-text,
+    .content-subtitle
+      font-size: 18px
+    .content-subtitle
+      color: $primary-color
+    #comercial
+      height: 200px
+    .content-text
+      padding: 20px
+      font-size: 18px
 </style>
