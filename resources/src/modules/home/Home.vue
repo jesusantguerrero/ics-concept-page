@@ -8,7 +8,7 @@
       p.content-text {{ company.description }}
       p.content-text {{ shortLorem(100) }}
     StrokeLine
-    .content-part.bg-white#servicios
+    .content-part.bg-gray#servicios
       h2.content-title Servicios
       h4.content-subtitle Descubre los Servicios Que tenemos para ti
       HomeServices
@@ -104,7 +104,7 @@
   .content-subtitle
     text-align: center
     margin-top: 20px
-    margin-bottom: 5px
+    margin-bottom: 10px
     color: $contrast-color
   .content-subtitle
     color: #2c3e50
@@ -128,6 +128,8 @@
       color: white
   .bg-white
     background: white
+  .bg-gray
+    background: #fdfdfd
   #comercial
     background: $contrast-color
     display: flex

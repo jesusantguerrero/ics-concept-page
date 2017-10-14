@@ -4,7 +4,7 @@
     header.row
       .brand-name
         img(src="./../assets/img/logo.svg").responsive-img
-        h1: a(href="#", class="text") ICS Services
+        h1: a(href="#", class="text") IC Services
       .nav-container
         nav.main-nav
           li: a(href="#inicio").nav-button Inicio
@@ -28,15 +28,16 @@
     padding: 0 50px
     text-align: right
     border-bottom: 1px sold #ccc
+    display: none
   .responsive-img
-    height: 120%
-    margin-right: 5px
+    height: 110%
+    margin-right: 15px
   header.row
     width: 100%
     margin: 0
     padding: 15px 50px
     background: #fff
-    height: 70px
+    height: 90px
     box-shadow: 1px 2px 2px transparentize(#000, .8)
     display: flex
     align-content: center
@@ -51,16 +52,16 @@
       right: 0
       box-shadow: 1px 2px 2px transparentze(#000, .8)
 
-    .brand-name
-      display: flex
-      align-items: center
-      height: 100%
-      a
-        color: $primary-color
-        text-decoration: none
-        transition: all ease .5s
-        &:hover
-          color: $light-color
+  .brand-name
+    display: flex
+    align-items: center
+    height: 100%
+    a
+      color: $primary-color
+      text-decoration: none
+      transition: all ease .5s
+      &:hover
+        color: $light-color
 
   .nav-container,
   .hamburger-menu
@@ -95,15 +96,25 @@
       color: $contrast-color
 
   @media (max-width: 768px)
+    .top-header
+      display: none
     header.row
       justify-content: left
+      height: 70px
       padding:
-       left: 5px
-       right: 5px
+        left: 7%
+        right: 7%
     .nav-container
       display: none
     .hamburger-menu
       display: block
+      font:
+        size: 20px
+        weight: 900
+    .brand-name
+      a
+        font-size: 20px
+
 
 </style>
 

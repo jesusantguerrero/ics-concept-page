@@ -42,4 +42,10 @@ export default {
     height: 150px
     margin-right: 10px
 
+  @media (max-width: 768px)
+    .responsive-img
+      width: 100px
+      height: 90px
+      margin-right: 5px
+
 </style>

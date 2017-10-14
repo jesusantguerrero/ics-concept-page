@@ -7,7 +7,7 @@ const placeholders = {
 
 const defaultConfig = {
   element: document.getElementById('map'),
-  image: './assets/img/logo.png',
+  image: './assets/img/marcador.png',
   template,
   key,
   placeholders,
@@ -29,7 +29,7 @@ const mainMap = {
       scrollwheel: true,
       controls: false,
       streetViewControl: false,
-      zoom: 13,
+      zoom: 15,
       zoomControlOptions: {
         position: google.maps.ControlPosition.RIGHT_CENTER
       }
@@ -41,6 +41,7 @@ const mainMap = {
     window.mapBounds = new google.maps.LatLngBounds();
     this.count = 0;
     this.searchPlace(places);
+    this.setCenter(null, true);
   },
 
   callback(results) {
@@ -102,7 +103,7 @@ const mainMap = {
   },
 
   setCenter(coords, isZoom) {
-    this.map.panTo(coords);
+    if (coords) this.map.panTo(coords);
     if (isZoom) this.map.setZoom(15);
   }
 
