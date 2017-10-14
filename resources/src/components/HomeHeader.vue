@@ -7,12 +7,12 @@
         h1: a(href="#", class="text") IC Services
       .nav-container
         nav.main-nav
-          li: a(href="#inicio").nav-button Inicio
-          li: a(href="#somos").nav-button Somos
-          li: a(href="#servcios").nav-button Servicios
-          li: a(href="#cobertura").nav-button Cobertura
+          li: a(href="#slide").nav-button Inicio
+          li: a(href="#servicios").nav-button Servicios
+          li: a(href="#noticias").nav-button Noticias
+          li: a(href="#beneficios").nav-button Beneficios
           li: a(href="#App").nav-button App
-          li: a(href="#contacto").nav-button Contacto
+          li: a(href="#contacto").nav-button.special Contacto
       .hamburger-menu: i.material-icons menu
 </template>
 
@@ -30,7 +30,7 @@
     border-bottom: 1px sold #ccc
     display: none
   .responsive-img
-    height: 110%
+    height: 100%
     margin-right: 15px
   header.row
     width: 100%
@@ -86,16 +86,43 @@
   .nav-button
     color: lighten($dark-color, 10%)
     display: block
+    padding:
+      top: 5px
+      bottom: 5px
     font:
       size: 22px
       weight: bolder
     text-decoration: none
     transition: all ease .5s
+
     &:hover
       text-decoration: none
       color: $contrast-color
 
-  @media (max-width: 768px)
+  .special
+    background: $primary-color
+    color: #fff
+    width: 150px
+    border-radius: 3px
+    text-align: center
+    border: 2px solid $contrast-color
+    position: relative
+    &:after
+      content: ''
+      position: absolute
+      height: 100%
+      width: 0
+      top: 0
+      left: 0
+      background: transparentize(#fff,.87)
+      border-radius: 3px
+      transition: all aese .2s
+    &:hover
+      background: lighten($primary-color,1%)
+      color: #fff
+      &:after
+        width: 100%
+  @media (max-width: 960px)
     .top-header
       display: none
     header.row

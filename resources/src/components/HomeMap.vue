@@ -1,13 +1,17 @@
 <template lang="pug">
   .contact-wrapper
     .map-wrapper#map-wrapper
-      #contancts(v-if="sections.contact")
-      #map(v-if="sections.map")
-      #email-form(v-if="sections.email")
-      #report-averia-form(v-if="sections.averia")
-    .contact-options.row
+      transition(name="slide-fade")
+        #contancts(v-if="sections.contact")
+      transition(name="slide-fade")
+        #map(v-if="sections.map")
+      transition(name="slide-fade")
+        #email-form(v-if="sections.email")
+      transition(name="slide-fade")
+        #report-averia-form(v-if="sections.averia")
+    .contact-options.row.bg-primary
       .contact-option.col-3.col-md-3(v-for="option in options",:data-id="option.id", @click="changeContactView(option.id)")
-        img(:src="option.src")
+        p.control-title: i.material-icons {{ option.icon}}
         p.control-title {{ option.text}}
 </template>
 
@@ -18,19 +22,23 @@
     {
       id: 'contacts',
       src: './../assets/img/',
-      text: 'Contactos'
+      text: 'Contactos',
+      icon: 'cellphone'
     }, {
       id: 'map',
       src: './../assets/img/',
-      text: 'Mapa'
+      text: 'Mapa',
+      icon: 'map'
     }, {
       id: 'email',
       src: './../assets/img/',
-      text: 'Email'
+      text: 'Email',
+      icon: 'mail_outline',
     }, {
       id: 'ticket',
       src: './../assets/img/',
-      text: 'Averia'
+      text: 'Averia',
+      icon: 'fix'
     }
   ];
 
@@ -77,7 +85,6 @@
   .map-wrapper
     width: 100%
     height: 500px
-    background: #fff
     margin-top: 30px
   #map
     height: 100%
@@ -89,6 +96,9 @@
     margin: 0 0 0 0
   .contact-option
     cursor: pointer
+    display: flex
+    justify-content: center
+    align-items: center
     p.control-title
       color: white
     &:hover

@@ -3,7 +3,7 @@
     .bigfooter
       article.page-info.col-md-7
         a.foot-brand
-          img(src="./../assets/img/logo_white.png").responsive-img
+          img(src="./../assets/img/logo_white.svg").responsive-img
         .brand-description
           p {{ appname }}
           p S.R.L
@@ -38,8 +38,8 @@ export default {
   @import '../assets/sass/_base'
   @import '../assets/sass/_footer'
   .responsive-img
-    width: 160px
-    height: 150px
+    width: 80px
+    height: 70px
     margin-right: 10px
 
   @media (max-width: 768px)

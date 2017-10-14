@@ -2,25 +2,24 @@
   #home.content-fluid
     HomeHeader
     Slide
-    .content-part.bg-white#somos
+    .content-part.hide.bg-white#somos
       h2.content-title Nuestra Empresa
-      h4.content-subtitle Lema o eslogan de la empresa aqui
+      h5.content-subtitle Lema o eslogan de la empresa aqui
       p.content-text {{ company.description }}
-      p.content-text {{ shortLorem(100) }}
-    StrokeLine
     .content-part.bg-gray#servicios
       h2.content-title Servicios
-      h4.content-subtitle Descubre los Servicios Que tenemos para ti
+      h5.content-subtitle Descubre los Servicios Que tenemos para ti
       HomeServices
     .content-part#comercial
+      h2.content-title Se parte de nosotros
       p.remark-text Selecciona el servicio que prefieras y contactanos.
-      p.remark-text Se parte de nosotros
+      #vivus-icon.animation
     .content-part#sbeneficios
       h2.content-title Beneficios
-    .content-part#cobertura
-      h2.content-title Cobertura
-      h4.content-subtitle Cubrimos dos municipios de la provincia
-    .content-part.bg-primary#contactanos
+    .content-part#comunicados
+      h2.content-title Comunicados
+      h5.content-subtitle Informaciones para clientes
+    .content-part.bg-gray#contactanos
       h2.content-title Visitanos
       HomeMap
     HomeFooter
@@ -33,6 +32,7 @@
   import HomeServices from '@/components/HomeServices';
   import HomeMap from '@/components/HomeMap';
   import HomeFooter from '@/components/HomeFooter';
+  import Vivus from 'vivus';
 
   const company = {
     description: `
@@ -66,6 +66,10 @@
         logoSrc: 'assets/logo.png',
       };
     },
+    mounted() {
+      const person = this.setVivusIcon('vivus-icon', './assets/img/ic_people_outline_white_24px.svg');
+      person.play(1000);
+    },
     methods: {
       login() {
         if (this.isEmpty()) {
@@ -84,6 +88,17 @@
 
       shortLorem(wordNumber) {
         return this.company.description.slice(0, wordNumber);
+      },
+
+      setVivusIcon(divId, linkToIcon) {
+        return new Vivus(divId, {
+          duration: 2000,
+          file: linkToIcon,
+          type: 'oneByOne',
+          onReady(myVivus) {
+            myVivus.el.setAttribute('height', '100px');
+          }
+        });
       }
     },
   };
@@ -111,7 +126,6 @@
     margin-bottom: 25px
     margin-top: 5px
   .content-part
-    margin-top: 20px
     padding: 20px
     paddng-bottom: 50px
     text-align: center
@@ -119,29 +133,33 @@
     padding: 20px 150px
     font-size: 18px
     color: lighten($dark-color, 25%)
-
   .bg-primary
     background: $primary-color
-    min-height: 400px
     .content-title,
     .content-subtitle
       color: white
   .bg-white
     background: white
   .bg-gray
-    background: #fdfdfd
+    background: #fcfcfc
   #comercial
     background: $contrast-color
     display: flex
     flex-direction: column
     align-content: center
+    align-items: center
     color: white
     height: 325px
     .content-title,
     .content-subtitle
       color: white
+  #contactanos
+    padding-bottom: 0
+    padding:
+      left: 0
+      right: 0
   .remark-text
-    font-size: 35px
+    font-size: 25px
   @media (max-width: 768px)
     .content-part
       padding:

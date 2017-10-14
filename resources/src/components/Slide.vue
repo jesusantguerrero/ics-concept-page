@@ -1,5 +1,5 @@
 <template lang="pug">
-  article.slide
+  article.slide#slide
     .slide-show
       .slide-item(v-for="slide in slides")
         .slide-img

@@ -16,7 +16,6 @@ const defaultConfig = {
 
 
 const mainMap = {
-
   init(config) {
     if (config) {
       this.config = config;
@@ -29,7 +28,7 @@ const mainMap = {
       scrollwheel: true,
       controls: false,
       streetViewControl: false,
-      zoom: 15,
+      zoom: 13,
       zoomControlOptions: {
         position: google.maps.ControlPosition.RIGHT_CENTER
       }
