@@ -2,7 +2,13 @@
   .contact-wrapper
     .map-wrapper#map-wrapper
       transition(name="slide-fade")
-        #contancts(v-if="sections.contact")
+        #contancts.row(v-if="sections.contacts")
+          .col-md-6
+            h2 Direccion
+            h2 Telefonos
+          .col-md-6.center-all
+            #marker-icon.custom-animation
+              img(src="../assets/img/placeholder.svg", :style="imgStyles")
       transition(name="slide-fade")
         #map(v-if="sections.map")
       transition(name="slide-fade")
@@ -51,11 +57,12 @@
           map: false,
           email: false,
           ticket: false
+        },
+        imgStyles: {
+          width: '200px',
+          height: '200px'
         }
       };
-    },
-    mounted() {
-
     },
     methods: {
       initMap() {
@@ -82,9 +89,10 @@
 
 <style lang="sass">
   @import '../assets/sass/_base.sass'
+
   .map-wrapper
     width: 100%
-    height: 500px
+    min-height: 300px
     margin-top: 30px
   #map
     height: 100%
@@ -101,6 +109,10 @@
     align-items: center
     p.control-title
       color: white
+      margin: 1rem 0
     &:hover
       background: transparentize(#fff, .9)
+    @media (max-width: 768px)
+      .contact-option
+        flex-direction: column
 </style>

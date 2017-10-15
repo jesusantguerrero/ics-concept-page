@@ -1,22 +1,21 @@
 <template lang="pug">
-  #login.row
-    .col-md-7
-
-    .col-md-5
-      form.col-md-8.align-center
-        .form-header
-          img(src="../../assets/logo.png")
-          h1 {{ appName }}
-          p {{ appStatement}}
-        .form-group(:class="{error: hasError}")
-          label Usuario
-          input(type="name", placeholder='usuario', v-model="credentials.nickname", class="form-control", required="true")
-        .form-group(:class="{error: hasError}")
-          label Contraseña
-          input(type="password", placeholder='usuario', v-model="credentials.password", class="form-control", required="true")
-        p(v-if="message" :class="{'text-error': hasError}") {{ message }}
-        .form-group
-          input(type="submit", class="btn btn-primary btn-block", value="INGRESAR", @click.prevent="login")
+  form.col-md-10.align-center
+    .form-header
+      h1 Igresa a la App
+      p {{ appStatement}}
+    .form-group(:class="{error: hasError}")
+      label Tipo de Cuenta
+      select(class="form-control", required="true")
+        option(:val="option.id", v-for="option in options") {{option.text}}
+    .form-group(:class="{error: hasError}")
+      label Usuario
+      input(type="name", placeholder='usuario', v-model="credentials.nickname", class="form-control", required="true")
+    .form-group(:class="{error: hasError}")
+      label Contraseña
+      input(type="password", placeholder='usuario', v-model="credentials.password", class="form-control", required="true")
+    p(v-if="message" :class="{'text-error': hasError}") {{ message }}
+    .form-group
+      input(type="submit", class="btn btn-primary btn-block", value="INGRESAR", @click.prevent="login")
 </template>
 
 <script>
@@ -28,6 +27,13 @@
           nickname: '',
           password: '',
         },
+        options: [{
+          id: 'tecnico',
+          text: 'Tecnico'
+        }, {
+          id: 'cliente',
+          text: 'Cliente'
+        }],
         appName: 'IC Payment 2',
         appStatement: 'El Sistema',
         message: '',

@@ -14,12 +14,13 @@
       h2.content-title Se parte de nosotros
       p.remark-text Selecciona el servicio que prefieras y contactanos.
       #vivus-icon.animation
+        img.responsive-img(src="../../assets/img/ic_people_outline_white_24px.svg")
     .content-part#sbeneficios
       h2.content-title Beneficios
     .content-part#comunicados
       h2.content-title Comunicados
       h5.content-subtitle Informaciones para clientes
-    .content-part.bg-gray#contactanos
+    .content-part.bg-primary#contactanos
       h2.content-title Visitanos
       HomeMap
     HomeFooter
@@ -32,7 +33,6 @@
   import HomeServices from '@/components/HomeServices';
   import HomeMap from '@/components/HomeMap';
   import HomeFooter from '@/components/HomeFooter';
-  import Vivus from 'vivus';
 
   const company = {
     description: `
@@ -65,42 +65,7 @@
         hasError: false,
         logoSrc: 'assets/logo.png',
       };
-    },
-    mounted() {
-      const person = this.setVivusIcon('vivus-icon', './assets/img/ic_people_outline_white_24px.svg');
-      person.play(1000);
-    },
-    methods: {
-      login() {
-        if (this.isEmpty()) {
-          this.message = this.credentials;
-        } else {
-          this.hasError = true;
-          this.message = 'LLene todos los campos por favor';
-        }
-      },
-      isEmpty() {
-        const data = this.credentials;
-        if (!data.nickname) return false;
-        if (!data.password) return false;
-        return true;
-      },
-
-      shortLorem(wordNumber) {
-        return this.company.description.slice(0, wordNumber);
-      },
-
-      setVivusIcon(divId, linkToIcon) {
-        return new Vivus(divId, {
-          duration: 2000,
-          file: linkToIcon,
-          type: 'oneByOne',
-          onReady(myVivus) {
-            myVivus.el.setAttribute('height', '100px');
-          }
-        });
-      }
-    },
+    }
   };
 </script>
 

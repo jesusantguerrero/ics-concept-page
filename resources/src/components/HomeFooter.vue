@@ -35,6 +35,7 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+  @import '../assets/sass/_photon_icons'
   @import '../assets/sass/_base'
   @import '../assets/sass/_footer'
   .responsive-img

@@ -28,17 +28,15 @@ const mainMap = {
       scrollwheel: true,
       controls: false,
       streetViewControl: false,
-      zoom: 13,
+      zoom: 0,
       zoomControlOptions: {
         position: google.maps.ControlPosition.RIGHT_CENTER
       }
     });
 
     this.service = new google.maps.places.PlacesService(this.map);
-    this.markers = [];
     this.infoWindows = [];
     window.mapBounds = new google.maps.LatLngBounds();
-    this.count = 0;
     this.searchPlace(places);
     this.setCenter(null, true);
   },
@@ -80,8 +78,6 @@ const mainMap = {
       informationWindow.open(self.map, marker);
     });
 
-    self.markers.push(marker);
-
     bounds.extend(new google.maps.LatLng(newLocation.lat, newLocation.lng));
     // fit the map to the new marker
     self.map.fitBounds(bounds);
@@ -93,12 +89,6 @@ const mainMap = {
     this.service.textSearch({
       query: place
     }, this.callback);
-  },
-
-  stopMarkers() {
-    this.markers.forEach((marker) => {
-      marker.setAnimation(google.maps.Animation.DROP);
-    });
   },
 
   setCenter(coords, isZoom) {
