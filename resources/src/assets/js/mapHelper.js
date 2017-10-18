@@ -23,14 +23,13 @@ const mainMap = {
       this.config = defaultConfig;
       this.config.element = document.getElementById('map');
     }
-
     this.map = new google.maps.Map(this.config.element, {
       scrollwheel: true,
       controls: false,
       streetViewControl: false,
-      zoom: 0,
+      zoom: 20,
       zoomControlOptions: {
-        position: google.maps.ControlPosition.RIGHT_CENTER
+        position: google.maps.ControlPosition.RIGHT_BOTTOM
       }
     });
 
@@ -60,7 +59,7 @@ const mainMap = {
 
     const bounds = window.mapBounds;
     //  Information window
-    const contentString = template.replace(placeholders.title, 'ICS Services');
+    const contentString = template.replace(placeholders.title, 'IC Services');
     const informationWindow = new google.maps.InfoWindow({
       content: contentString
     });
@@ -93,7 +92,7 @@ const mainMap = {
 
   setCenter(coords, isZoom) {
     if (coords) this.map.panTo(coords);
-    if (isZoom) this.map.setZoom(15);
+    if (isZoom) this.map.setZoom(20);
   }
 
 };

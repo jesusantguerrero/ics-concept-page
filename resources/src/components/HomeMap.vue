@@ -4,8 +4,8 @@
       transition(name="slide-fade")
         #contancts.row(v-if="sections.contacts")
           .col-md-6
-            h2 Direccion
-            h2 Telefonos
+            h3.content-title Direccion
+            h3.content-title Telefonos
           .col-md-6.center-all
             #marker-icon.custom-animation
               img(src="../assets/img/placeholder.svg", :style="imgStyles")
@@ -17,7 +17,7 @@
         #report-averia-form(v-if="sections.averia")
     .contact-options.row.bg-primary
       .contact-option.col-3.col-md-3(v-for="option in options",:data-id="option.id", @click="changeContactView(option.id)")
-        p.control-title: i.material-icons {{ option.icon}}
+        i.material-icons {{ option.icon}}
         p.control-title {{ option.text}}
 </template>
 
@@ -85,6 +85,7 @@
       }
     }
   };
+
 </script>
 
 <style lang="sass">
@@ -105,14 +106,14 @@
   .contact-option
     cursor: pointer
     display: flex
+    flex-direction: column
     justify-content: center
     align-items: center
+    text-align: center
     p.control-title
       color: white
       margin: 1rem 0
     &:hover
       background: transparentize(#fff, .9)
-    @media (max-width: 768px)
-      .contact-option
-        flex-direction: column
+
 </style>
