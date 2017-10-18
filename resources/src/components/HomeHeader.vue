@@ -90,7 +90,7 @@
       top: 5px
       bottom: 5px
     font:
-      size: 22px
+      size: 16px
       weight: bolder
     text-decoration: none
     transition: all ease .5s
