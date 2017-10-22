@@ -6,15 +6,23 @@
       h2.content-title Nuestra Empresa
       h5.content-subtitle Lema o eslogan de la empresa aqui
       p.content-text {{ company.description }}
+      .row
+        col-md-4
+          img(src="")
+        col-md-4
+          img(src="")
+        col-md-4
+          img(src="")
     .content-part.bg-gray#servicios
-      h2.content-title Servicios
+      h2.content-title Escoge tu servicio
       h5.content-subtitle Descubre los Servicios Que tenemos para ti
       HomeServices
     .content-part#comercial
-      h2.content-title Se parte de nosotros
-      p.remark-text Selecciona el servicio que prefieras y contactanos.
-      #vivus-icon.animation
-        img.responsive-img(src="../../assets/img/ic_people_outline_white_24px.svg")
+      .cover.bg-primary
+        h2.content-title Se parte de nosotros
+        p.remark-text Selecciona el servicio que prefieras y contactanos.
+        #vivus-icon.animation
+          img.cover-img(src="../../assets/img/ic_people_outline_white_24px.svg")
     .content-part#sbeneficios
       h2.content-title Beneficios
     .content-part#comunicados
@@ -107,8 +115,15 @@
     background: white
   .bg-gray
     background: #fcfcfc
+  .cover
+    height: 100%
+    width: 100%
+    margin: -20px
+    &.bg-primary
+      background: transparentize($contrast-color,.2) !important
   #comercial
     background: $contrast-color
+    background-image: url('../../assets/img/cropped-home.png')
     display: flex
     flex-direction: column
     align-content: center

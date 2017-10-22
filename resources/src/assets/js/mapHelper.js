@@ -33,15 +33,9 @@ const mainMap = {
       }
     });
 
-    this.service = new google.maps.places.PlacesService(this.map);
     this.infoWindows = [];
     window.mapBounds = new google.maps.LatLngBounds();
-    this.searchPlace(places);
     this.setCenter(null, true);
-  },
-
-  callback(results) {
-    mainMap.setMarker(results[0]);
   },
 
   setMarker(place) {
@@ -82,12 +76,6 @@ const mainMap = {
     self.map.fitBounds(bounds);
     // center the map
     self.map.setCenter(bounds.getCenter());
-  },
-
-  searchPlace(place) {
-    this.service.textSearch({
-      query: place
-    }, this.callback);
   },
 
   setCenter(coords, isZoom) {

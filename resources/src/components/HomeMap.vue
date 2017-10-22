@@ -8,7 +8,6 @@
 <script>
   import mapHelper from '@/assets/js/mapHelper';
 
-
   export default {
     data() {
       return {

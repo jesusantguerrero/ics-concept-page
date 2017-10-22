@@ -5,15 +5,13 @@
           .card-custom-header
             p.great-text {{ service.megas}}
               small.caption MB
-            .button-container
-              button.btn.call Ver Detalles
           .card-details
             .detail-content
           .card-content
             h4.top-plan {{ service.plan }}
             p.price RD$ {{ service.price }} / mes
             .button-container
-              a(href="#contactos") contactar
+              button.btn.call Seleccionar
 </template>
 
 <style lang="sass">
@@ -34,7 +32,7 @@
     border: 1px solid #ccc
     box-shadow: 2px 2px 4px transparentize(#272727, .8)
     height: 400px
-    border-radius: 8px
+    border-radius: 2px
     margin: auto
     margin-bottom: 15px
     cursor: pointer
@@ -48,7 +46,7 @@
       text-align: center
       background: dodgerblue
       color: white
-      border-radius: 4px 4px 0 0
+      border-radius: 2px 2px 0 0
     .great-text
       color: white
       margin: 0 0 0 0
@@ -61,7 +59,7 @@
       padding: 30px
       width: 100%
       text-align: center
-      border-radius: 0 0 4px 4px
+      border-radius: 0 0 2px 2px
     .call
       border-color: #fff
       cursor: pointer

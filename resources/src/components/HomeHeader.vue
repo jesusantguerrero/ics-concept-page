@@ -94,10 +94,22 @@
       weight: bolder
     text-decoration: none
     transition: all ease .5s
-
+    position: relative
+    &:after
+      content: ''
+      position: absolute
+      height: 3px
+      width: 0
+      bottom: 3px
+      left: 0
+      background: $contrast-color
+      border-radius: 3px
+      transition: all ease .5s
     &:hover
       text-decoration: none
       color: $contrast-color
+      &:after
+        width: 100%
 
   .special
     background: $primary-color
@@ -105,7 +117,6 @@
     width: 150px
     border-radius: 3px
     text-align: center
-    border: 2px solid $contrast-color
     position: relative
     &:after
       content: ''
@@ -116,9 +127,8 @@
       left: 0
       background: transparentize(#fff,.87)
       border-radius: 3px
-      transition: all aese .2s
+      transition: all ease .2s
     &:hover
-      background: lighten($primary-color,1%)
       color: #fff
       &:after
         width: 100%
@@ -133,6 +143,31 @@
         right: 7%
     .nav-container
       display: none
+      &.expanded
+        display: block
+        position: absolute
+        width: 100%
+        height: 100vh
+        top: 70px
+        left: 0
+        z-index: 101
+        background: white
+        display: flex
+        flex-direction: column
+        align-content: center
+        .main-nav
+          display: block
+          height: fit-content
+          margin-top: 10%
+          width: 100%
+          li
+            display: flex
+            padding: 5% 20%
+            text-align: center
+            justify-content: center
+        .nav-button
+          font-size: 22px
+
     .hamburger-menu
       display: block
       font:
@@ -141,7 +176,6 @@
     .brand-name
       a
         font-size: 20px
-
 
 </style>
 

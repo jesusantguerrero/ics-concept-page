@@ -7,12 +7,14 @@
         .brand-description
           p {{ appname }}
           p S.R.L
+          .network
+            a(href="#").network-ic: span.icon.icon-facebook
+            a(href="#").network-ic: span.icon.icon-twitter
+            a(href="#").network-ic: span.icon.icon-play
+            a(href="#").network-ic: span.icon.icon-facebook
       article.foot-menu-container.col-md-5
-        .network
-          a(href="#").network-ic: span.icon.icon-facebook
-          a(href="#").network-ic: span.icon.icon-twitter
-          a(href="#").network-ic: span.icon.icon-play
-          a(href="#").network-ic: span.icon.icon-facebook
+        h4 Contactos
+
     p.copyright-info {{ appname }} - &copy; {{ copyRightsYears() }}  All right reserved
       | | Code and Design with  <span class="love"> &#x2764;</span>  by <span class="the-company"><a target="_blank" href="https://jesusantguerrero.com">Insane Code (Jesus Guerrero)</a></span>
 </template>
