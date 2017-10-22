@@ -7,26 +7,29 @@
       h5.content-subtitle Lema o eslogan de la empresa aqui
       p.content-text {{ company.description }}
       .row
-        col-md-4
+        .col-md-4
           img(src="")
-        col-md-4
+          h3.content-subtitle Económico
+        .col-md-4
           img(src="")
-        col-md-4
+          h3.content-subtitle Rápido
+        .col-md-4
           img(src="")
+          h3.content-subtitle Otra Cosa
     .content-part.bg-gray#servicios
       h2.content-title Escoge tu servicio
       h5.content-subtitle Descubre los Servicios Que tenemos para ti
       HomeServices
-    .content-part#comercial
-      .cover.bg-primary
+    #comercial
+      .content-part.cover.bg-primary
         h2.content-title Se parte de nosotros
         p.remark-text Selecciona el servicio que prefieras y contactanos.
-        #vivus-icon.animation
+        #vivus-icon.animate
           img.cover-img(src="../../assets/img/ic_people_outline_white_24px.svg")
     .content-part#sbeneficios
       h2.content-title Beneficios
     .content-part#comunicados
-      h2.content-title Comunicados
+      h2.content-title Noticias
       h5.content-subtitle Informaciones para clientes
     .content-part.bg-primary#contactanos
       h2.content-title Visitanos
@@ -93,9 +96,9 @@
     text-align: center
     margin-top: 20px
     margin-bottom: 10px
-    color: $contrast-color
+    color: $primary-color
   .content-subtitle
-    color: #2c3e50
+    color: $contrast-color
     margin-bottom: 25px
     margin-top: 5px
   .content-part
@@ -118,12 +121,12 @@
   .cover
     height: 100%
     width: 100%
-    margin: -20px
     &.bg-primary
-      background: transparentize($contrast-color,.2) !important
+      background: transparentize($contrast-color,.1) !important
   #comercial
     background: $contrast-color
     background-image: url('../../assets/img/cropped-home.png')
+    background-origin: center
     display: flex
     flex-direction: column
     align-content: center
