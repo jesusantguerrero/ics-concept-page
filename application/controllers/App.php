@@ -40,7 +40,7 @@ class App extends CI_Controller {
     $jsFiles = [];
     $cssFiles = [];
     $js = array_merge($js,['jquery-3.2.1.min','popper.min','manifest','vendor','bootstrap.min',$title]);
-    $css = array_merge($css,['bootstrap.min',$title]);
+    $css = array_merge($css,['animate','bootstrap.min',$title]);
     $assets   = 'assets/';
 
     foreach ($js as $filename) {

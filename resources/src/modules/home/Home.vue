@@ -6,16 +6,19 @@
       h2.content-title Nuestra Empresa
       h5.content-subtitle Lema o eslogan de la empresa aqui
       p.content-text {{ company.description }}
-      .row
+      .row.beneficios
         .col-md-4
-          img(src="")
+          img(src="../../assets/img/lightning.svg").md-image.animated.pulse
           h3.content-subtitle Económico
+          p {{ getLorem(100)}}
         .col-md-4
-          img(src="")
+          img(src="../../assets/img/lightning.svg").md-image.animated.pulse
           h3.content-subtitle Rápido
+          p {{ getLorem(100) }}
         .col-md-4
-          img(src="")
+          img(src="../../assets/img/wifi-signal.svg").md-image.animated.pulse
           h3.content-subtitle Otra Cosa
+          p {{ getLorem(100) }}
     .content-part.bg-gray#servicios
       h2.content-title Escoge tu servicio
       h5.content-subtitle Descubre los Servicios Que tenemos para ti
@@ -76,8 +79,14 @@
         hasError: false,
         logoSrc: 'assets/logo.png',
       };
+    },
+    methods: {
+      getLorem(number) {
+        return this.company.description.slice(0, number);
+      }
     }
   };
+
 </script>
 
 <style lang="sass">
@@ -97,36 +106,44 @@
     margin-top: 20px
     margin-bottom: 10px
     color: $primary-color
+
   .content-subtitle
     color: $contrast-color
     margin-bottom: 25px
     margin-top: 5px
+
   .content-part
     padding: 20px
     paddng-bottom: 50px
     text-align: center
+
   .content-text
     padding: 20px 150px
     font-size: 18px
     color: lighten($dark-color, 25%)
+
   .bg-primary
     background: $primary-color
     .content-title,
     .content-subtitle
       color: white
+
   .bg-white
     background: white
+
   .bg-gray
-    background: #fcfcfc
+    background: #fafafa
+
   .cover
     height: 100%
     width: 100%
     &.bg-primary
-      background: transparentize($contrast-color,.1) !important
+      background: transparentize($contrast-color,.3) !important
+
   #comercial
     background: $contrast-color
-    background-image: url('../../assets/img/cropped-home.png')
-    background-origin: center
+    background-image: url('../../assets/img/office.jpeg')
+    background-position: center
     display: flex
     flex-direction: column
     align-content: center
@@ -136,25 +153,33 @@
     .content-title,
     .content-subtitle
       color: white
+
   #contactanos
     padding-bottom: 0
     padding:
       left: 0
       right: 0
+  .beneficios
+    margin: 50px 0
   .remark-text
     font-size: 25px
+  .md-image
+    width: 75px
+    height: 75px
+    margin-bottom: 20px
   @media (max-width: 768px)
     .content-part
       padding:
         left: 5px
         right: 5px
+
     .remark-text,
     .content-subtitle
       font-size: 18px
-    .content-subtitle
-      color: $primary-color
+
     #comercial
       height: 200px
+
     .content-text
       padding: 20px
       font-size: 18px

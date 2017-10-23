@@ -5,15 +5,15 @@
       .brand-name
         img(src="./../assets/img/logo.svg").responsive-img
         h1: a(href="#", class="text") IC Services
-      .nav-container
+      .nav-container(:class="{expanded: menuExpanded}")
         nav.main-nav
           li: a(href="#slide").nav-button Inicio
+          li: a(href="#beneficios").nav-button Beneficios
           li: a(href="#servicios").nav-button Servicios
           li: a(href="#noticias").nav-button Noticias
-          li: a(href="#beneficios").nav-button Beneficios
           li: a(href="#App").nav-button App
           li: a(href="#contacto").nav-button.special Contacto
-      .hamburger-menu: i.material-icons menu
+      .hamburger-menu(@click="changeMenu"): i.material-icons menu
 </template>
 
 <style lang="sass">
@@ -149,7 +149,7 @@
         width: 100%
         height: 100vh
         top: 70px
-        left: 0
+        right: 0
         z-index: 101
         background: white
         display: flex
@@ -167,7 +167,6 @@
             justify-content: center
         .nav-button
           font-size: 22px
-
     .hamburger-menu
       display: block
       font:
@@ -176,12 +175,62 @@
     .brand-name
       a
         font-size: 20px
+  @keyframes fade-in
+
 
 </style>
 
 
 <script>
-  export default {
-    name: 'HomeHeader'
-  };
+export default {
+  name: 'HomeHeader',
+  data() {
+    return {
+      menuExpanded: false,
+    };
+  },
+  methods: {
+    changeMenu() {
+      this.expandMenu();
+      if (!this.menuExpanded) {
+        this.menuExpanded = true;
+      } else {
+        setTimeout(() => {
+          this.menuExpanded = false;
+        }, 600);
+      }
+    },
+
+    expandMenu() {
+      const icon = this.menuExpanded ? 'menu' : 'clear';
+      if (this.menuExpanded) {
+        this.hideMenu();
+      } else {
+        this.showMenu();
+      }
+      this.animateCss('.hamburger-menu', 'rotateIn', icon);
+    },
+
+    showMenu() {
+      this.animateCss('.nav-container', 'bounceInRight');
+      console.log('aqui estamos');
+    },
+
+    hideMenu() {
+      this.animateCss('.nav-container', 'bounceOutRight');
+    },
+
+    animateCss(element, transitionName, icon) {
+      const theClass = `animated ${transitionName}`;
+      $(element)
+        .removeClass(theClass)
+        .addClass(theClass)
+        .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+          const $this = $(this);
+          $this.removeClass(theClass);
+          if (icon) $this.find('i').text(icon);
+        });
+    }
+  }
+};
 </script>

@@ -43,7 +43,7 @@
     min-height: 300px
     margin-top: 30px
   #map
-    height: 100%
+    height: 600px
     width: 100%
   .contact-option-row
     min-height: 50px

@@ -2,7 +2,6 @@
   article.slide#slide
     .slide-show
       .slide-item(v-for="slide in slides")
-        .slide-img
         .slide-text.row
           .col-md-6.justify-content-center
             h2.slide-title {{ slide.title }}
@@ -18,6 +17,8 @@
 <style lang="sass">
   @import '../assets/sass/_vars.sass'
   @import '../assets/sass/_slide.sass'
+  .slide
+    background-image: url('./../assets/img/ipad-tablet.jpg')
 </style>
 
 <script>
@@ -43,10 +44,6 @@
     name: 'slide',
     components: {
       StrokeLine
-    },
-    mounted() {
-      const img = './assets/img/cropped-home.png';
-      $('.slide').css('background-image', `url(${img})`);
     },
     data() {
       return {

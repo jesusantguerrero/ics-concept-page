@@ -1,6 +1,6 @@
 const template = '<div class="imformation Window"><h2>%title%<h2></di>';
 const key = 'AIzaSyBxbo8jtHUlXtuOnG1wT-YbWtISWVACm4g';
-const places = ['La romana'];
+const ICS = { lat: 18.427412, lng: -68.966571 };
 const placeholders = {
   title: '%title%'
 };
@@ -11,7 +11,7 @@ const defaultConfig = {
   template,
   key,
   placeholders,
-  places
+  places: ICS
 };
 
 
@@ -23,36 +23,24 @@ const mainMap = {
       this.config = defaultConfig;
       this.config.element = document.getElementById('map');
     }
+
     this.map = new google.maps.Map(this.config.element, {
       scrollwheel: true,
+      center: ICS,
       controls: false,
       streetViewControl: false,
-      zoom: 20,
+      zoom: 18,
       zoomControlOptions: {
         position: google.maps.ControlPosition.RIGHT_BOTTOM
       }
     });
 
     this.infoWindows = [];
-    window.mapBounds = new google.maps.LatLngBounds();
-    this.setCenter(null, true);
+    this.setMarker(ICS);
   },
 
   setMarker(place) {
     const self = this;
-
-    const newLocation = {
-      id: this.count += 1,
-      lat: place.geometry.location.lat(),
-      lng: place.geometry.location.lng(),
-      icon: place.icon,
-      name: place.name,
-      realName: place.formatted_address,
-      pictures: []
-    };
-
-    const bounds = window.mapBounds;
-    //  Information window
     const contentString = template.replace(placeholders.title, 'IC Services');
     const informationWindow = new google.maps.InfoWindow({
       content: contentString
@@ -62,20 +50,14 @@ const mainMap = {
     const marker = new google.maps.Marker({
       icon: self.config.image,
       map: self.map,
-      position: place.geometry.location,
-      title: newLocation.name,
+      position: place,
+      title: 'ICS',
       animation: google.maps.Animation.BOUNCE
     });
 
     marker.addListener('click', () => {
       informationWindow.open(self.map, marker);
     });
-
-    bounds.extend(new google.maps.LatLng(newLocation.lat, newLocation.lng));
-    // fit the map to the new marker
-    self.map.fitBounds(bounds);
-    // center the map
-    self.map.setCenter(bounds.getCenter());
   },
 
   setCenter(coords, isZoom) {
