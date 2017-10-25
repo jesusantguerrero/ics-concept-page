@@ -1,19 +1,24 @@
 <template lang="pug">
   footer.site-footer.media-row
     .bigfooter
-      article.page-info.col-md-7
+      article.page-info.col-md-4
         a.foot-brand
           img(src="./../assets/img/logo_white.svg").responsive-img
         .brand-description
           p {{ appname }}
           p S.R.L
-          .network
-            a(href="#").network-ic: span.icon.icon-facebook
-            a(href="#").network-ic: span.icon.icon-twitter
-            a(href="#").network-ic: span.icon.icon-play
-            a(href="#").network-ic: span.icon.icon-facebook
       article.foot-menu-container.col-md-5
         h4 Contactos
+        p <i class="material-icons"> place</i> C/ Nombre de calle, #0, La Romana, RD
+        p <i class="material-icons"> phone</i> 829 000 000
+        p <i class="material-icons"> mail</i> me@example.com
+      article.foot-menu-container.col-md-3
+        h4 Redes
+        .network
+          a(href="#").network-ic: span.icon.icon-facebook
+          a(href="#").network-ic: span.icon.icon-twitter
+          a(href="#").network-ic: span.icon.icon-play
+
 
     p.copyright-info {{ appname }} - &copy; {{ copyRightsYears() }}  All right reserved
       | | Code and Design with  <span class="love"> &#x2764;</span>  by <span class="the-company"><a target="_blank" href="https://jesusantguerrero.com">Insane Code (Jesus Guerrero)</a></span>
