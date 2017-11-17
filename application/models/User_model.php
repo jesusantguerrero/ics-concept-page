@@ -12,7 +12,7 @@ class User_model extends CI_model
 
   }
 
-  public function update($user,$user_id)
+  public function update($data,$user_id)
   {
 
   }

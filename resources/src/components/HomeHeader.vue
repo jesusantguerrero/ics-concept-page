@@ -4,14 +4,15 @@
     header.row
       .brand-name
         img(src="./../assets/img/logo.svg").responsive-img
-        h1: a(href="#", class="text") IC Services
+        .logo-box
+          h1.name IC Services
+          small.statement La red que te conecta con los tuyos
       .nav-container(:class="{expanded: menuExpanded}")
         nav.main-nav
           li: a(href="#slide").nav-button Inicio
           li: a(href="#beneficios").nav-button Beneficios
           li: a(href="#servicios").nav-button Servicios
           li: a(href="#noticias").nav-button Noticias
-          li: a(href="#App").nav-button App
           li: a(href="#contacto").nav-button.special Contacto
       .hamburger-menu(@click="changeMenu"): i.material-icons menu
 </template>
@@ -56,6 +57,12 @@
     display: flex
     align-items: center
     height: 100%
+    .logo-box
+      +makeFlex(100%, column, center, center)
+      .name
+        margin-bottom: 0
+      .statement
+        color: $contrast-color
     a
       color: $primary-color
       text-decoration: none

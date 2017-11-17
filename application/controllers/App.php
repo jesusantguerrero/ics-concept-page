@@ -1,7 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-
 class App extends CI_Controller {
 
   public function __construct()
@@ -34,12 +33,11 @@ class App extends CI_Controller {
     $this->parser->parse('home',$data);
   }
 
-
   private function defineData($title,$js = [] ,$css = [])
   {
     $jsFiles = [];
     $cssFiles = [];
-    $js = array_merge($js,['jquery-3.2.1.min','popper.min','manifest','vendor','bootstrap.min',$title]);
+    $js  = array_merge($js,['jquery-3.2.1.min','popper.min','manifest','vendor','bootstrap.min',$title]);
     $css = array_merge($css,['animate','bootstrap.min',$title]);
     $assets   = 'assets/';
 

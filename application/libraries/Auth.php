@@ -5,7 +5,7 @@
     {
       $ci =& get_instance();
       $this->session = $_SESSION;
-      $this->user = $ci->load->model('user_model');
+      $this->user    = $ci->load->model('user_model');
     }
 
     public function login($nickname, $password, $mode = 'admin')

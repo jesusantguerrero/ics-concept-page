@@ -23,6 +23,7 @@
 
 <script>
   import StrokeLine from '@/components/StrokeLine';
+  import ipadTablet from '@/assets/img/ipad-tablet.jpg';
 
   const slides = [
     {
@@ -50,6 +51,11 @@
         slides,
         indicators: ['indicator-one', 'indicator-two', 'indicator-three']
       };
+    },
+    computed: {
+      image() {
+        return ipadTablet;
+      }
     }
   };
 

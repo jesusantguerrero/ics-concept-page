@@ -47,6 +47,7 @@
   import HomeServices from '@/components/HomeServices';
   import HomeMap from '@/components/HomeMap';
   import HomeFooter from '@/components/HomeFooter';
+  import cover from '@/assets/img/office.jpeg';
 
   const company = {
     description: `
@@ -57,6 +58,7 @@
   };
 
   export default {
+
     name: 'home',
     components: {
       HomeHeader,
@@ -66,6 +68,7 @@
       HomeServices,
       HomeMap
     },
+
     data() {
       return {
         credentials: {
@@ -79,6 +82,11 @@
         hasError: false,
         logoSrc: 'assets/logo.png',
       };
+    },
+    computed: {
+      image() {
+        return cover;
+      }
     },
     methods: {
       getLorem(number) {
