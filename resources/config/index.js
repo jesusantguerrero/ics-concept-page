@@ -8,7 +8,7 @@ module.exports = {
     index: `${rootDir}/application/views/layouts/index.php`,
     assetsRoot:`${rootDir}/public/`,
     assetsSubDirectory: 'assets',
-    assetsPublicPath: './',
+    assetsPublicPath: '/ics-concept-page/public/',
 
     productionSourceMap: true,
     // Gzip off by default as many popular static hosts such as
