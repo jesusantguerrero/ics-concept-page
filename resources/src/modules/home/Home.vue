@@ -6,37 +6,53 @@
       h2.content-title Nuestra Empresa
       h5.content-subtitle Lema o eslogan de la empresa aqui
       p.content-text {{ company.description }}
-      .row.beneficios
+      .row.sub-row#beneficios
         .col-md-4
-          img(src="../../assets/img/lightning.svg").md-image.animated.pulse
+          .md-image-container.animated-pulse: i.material-icons attach_money
           h3.content-subtitle Económico
           p {{ getLorem(100)}}
         .col-md-4
-          img(src="../../assets/img/lightning.svg").md-image.animated.pulse
+          .md-image-container.animated-pulse: i.material-icons flash_on
           h3.content-subtitle Rápido
           p {{ getLorem(100) }}
         .col-md-4
-          img(src="../../assets/img/wifi-signal.svg").md-image.animated.pulse
-          h3.content-subtitle Otra Cosa
+          .md-image-container.animated-pulse: i.material-icons dns
+          h3.content-subtitle Calidad
           p {{ getLorem(100) }}
+
     .content-part.bg-gray#servicios
       h2.content-title Escoge tu servicio
       h5.content-subtitle Descubre los Servicios Que tenemos para ti
       HomeServices
+
     #comercial
-      .content-part.cover.bg-primary
+      .content-part.cover.bg-contrast
         h2.content-title Se parte de nosotros
         p.remark-text Selecciona el servicio que prefieras y contactanos.
-        #vivus-icon.animate
-          img.cover-img(src="../../assets/img/ic_people_outline_white_24px.svg")
-    .content-part#sbeneficios
-      h2.content-title Beneficios
-    .content-part#comunicados
+
+    .content-part#noticias
       h2.content-title Noticias
       h5.content-subtitle Informaciones para clientes
-    .content-part.bg-primary#contactanos
+      .row.sub-row
+        .col-md-6
+          h3.content-subtitle Noticia 1
+          p {{ getLorem(100)}}
+        .col-md-6
+          h3.content-subtitle Noticia 2
+          p {{ getLorem(100) }}
+
+    .content-part.bg-gray#contactanos
       h2.content-title Visitanos
       HomeMap
+
+    #horarios
+      .content-part.cover.custom-bg-primary
+        h2.content-title Horarios
+        p.remark-text Lunes a Viernes: 9:00 am - 5:00 pm.
+        p.remark-text Sabados: 9:00 am - 12:00 pm.
+        p.remark-text Domingo: No laboramos
+
+    MessageBox
     HomeFooter
 </template>
 
@@ -46,6 +62,7 @@
   import StrokeLine from '@/components/StrokeLine';
   import HomeServices from '@/components/HomeServices';
   import HomeMap from '@/components/HomeMap';
+  import MessageBox from '@/components/MessageBox';
   import HomeFooter from '@/components/HomeFooter';
   import cover from '@/assets/img/office.jpeg';
 
@@ -66,7 +83,8 @@
       HomeFooter,
       StrokeLine,
       HomeServices,
-      HomeMap
+      HomeMap,
+      MessageBox
     },
 
     data() {
@@ -96,6 +114,7 @@
   };
 
 </script>
+
 
 <style lang="sass">
   @import  '../../assets/sass/_base'
@@ -130,25 +149,23 @@
     font-size: 18px
     color: lighten($dark-color, 25%)
 
-  .bg-primary
-    background: $primary-color
-    .content-title,
-    .content-subtitle
-      color: white
-
   .bg-white
     background: white
 
   .bg-gray
-    background: #fafafa
+    background:linear-gradient(to top,  #fafafa 0%, #ffffff 100%)
+    border-top: 1px solid #ddd
 
   .cover
     height: 100%
     width: 100%
-    &.bg-primary
-      background: transparentize($contrast-color,.3) !important
+    &.bg-contrast
+      background: transparentize($contrast-color,.3)
+    &.custom-bg-primary
+      background: transparentize($primary-color,.2)
 
-  #comercial
+  #comercial,
+  #horarios
     background: $contrast-color
     background-image: url('../../assets/img/office.jpeg')
     background-position: center
@@ -162,19 +179,33 @@
     .content-subtitle
       color: white
 
+
   #contactanos
     padding-bottom: 0
     padding:
       left: 0
       right: 0
-  .beneficios
+
+  .sub-row
     margin: 50px 0
+    padding: 50px
+
   .remark-text
     font-size: 25px
+
   .md-image
     width: 75px
     height: 75px
+  .md-image-container
+    width: 100%
+    display: flex
+    justify-content: center
+    align-items: center
     margin-bottom: 20px
+    .material-icons
+      font-size: 70px
+      color: $contrast-color
+      width: fit-content
   @media (max-width: 768px)
     .content-part
       padding:
@@ -187,8 +218,11 @@
 
     #comercial
       height: 200px
-
+    .content-title
+      font-size: 20px
     .content-text
       padding: 20px
-      font-size: 18px
+      font-size: 14px
+    .sub-row
+      padding: 7%
 </style>

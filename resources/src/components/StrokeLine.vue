@@ -19,6 +19,7 @@
     height: 100%
     width: 10%
     background: $primary-color
+    border-radius: 0 0 0 10px
 </style>
 
 <script>

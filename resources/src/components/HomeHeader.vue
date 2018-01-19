@@ -9,13 +9,70 @@
           small.statement La red que te conecta con los tuyos
       .nav-container(:class="{expanded: menuExpanded}")
         nav.main-nav
-          li: a(href="#slide").nav-button Inicio
-          li: a(href="#beneficios").nav-button Beneficios
-          li: a(href="#servicios").nav-button Servicios
-          li: a(href="#noticias").nav-button Noticias
-          li: a(href="#contacto").nav-button.special Contacto
+          li: a(href="#slide", @click="changeMenu").nav-button Inicio
+          li: a(href="#beneficios", @click="changeMenu").nav-button Beneficios
+          li: a(href="#servicios", @click="changeMenu").nav-button Servicios
+          li: a(href="#noticias", @click="changeMenu").nav-button Noticias
+          li: a(href="#contacto", @click="changeMenu").nav-button.special Contacto
       .hamburger-menu(@click="changeMenu"): i.material-icons menu
 </template>
+
+<script>
+  export default {
+    name: 'HomeHeader',
+    data() {
+      return {
+        menuExpanded: false,
+      };
+    },
+    methods: {
+      changeMenu() {
+        const width = window.innerWidth;
+        if (width <= 768) {
+          this.expandMenu();
+          if (!this.menuExpanded) {
+            this.menuExpanded = true;
+          } else {
+            setTimeout(() => {
+              this.menuExpanded = false;
+            }, 600);
+          }
+        }
+      },
+
+      expandMenu() {
+        const icon = this.menuExpanded ? 'menu' : 'clear';
+        if (this.menuExpanded) {
+          this.hideMenu();
+        } else {
+          this.showMenu();
+        }
+        this.animateCss('.hamburger-menu', 'rotateIn', icon);
+      },
+
+      showMenu() {
+        this.animateCss('.nav-container', 'bounceInRight');
+      },
+
+      hideMenu() {
+        this.animateCss('.nav-container', 'bounceOutRight');
+      },
+
+      animateCss(element, transitionName, icon) {
+        const theClass = `animated ${transitionName}`;
+        $(element)
+          .removeClass(theClass)
+          .addClass(theClass)
+          .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+            const $this = $(this);
+            $this.removeClass(theClass);
+            if (icon) $this.find('i').text(icon);
+          });
+      }
+    }
+  };
+</script>
+
 
 <style lang="sass">
   @import  '../assets/sass/_vars'
@@ -43,6 +100,7 @@
     display: flex
     align-content: center
     position: relative
+    border-bottom: 1px solid #ccc
     &:after
       content: ''
       height: 7px
@@ -52,15 +110,19 @@
       bottom: -7px
       right: 0
       box-shadow: 1px 2px 2px transparentze(#000, .8)
+      border-radius: 0 0 0 6px
 
   .brand-name
     display: flex
     align-items: center
     height: 100%
+    cursor: pointer
     .logo-box
-      +makeFlex(100%, column, center, center)
+      +makeFlex(100%, column, flex-start, center)
       .name
         margin-bottom: 0
+        width: 100%
+        color: $primary-color
       .statement
         color: $contrast-color
     a
@@ -119,7 +181,7 @@
         width: 100%
 
   .special
-    background: $primary-color
+    background: $bg-primary
     color: #fff
     width: 150px
     border-radius: 3px
@@ -148,6 +210,8 @@
       padding:
         left: 7%
         right: 7%
+    .responsive-img
+      margin-right: 7px
     .nav-container
       display: none
       &.expanded
@@ -169,7 +233,7 @@
           width: 100%
           li
             display: flex
-            padding: 5% 20%
+            padding: 2% 20%
             text-align: center
             justify-content: center
         .nav-button
@@ -179,65 +243,12 @@
       font:
         size: 20px
         weight: 900
-    .brand-name
-      a
-        font-size: 20px
-  @keyframes fade-in
+    .name
+      font-size: 18px
+    .statement
+      font-size: 7px
+
 
 
 </style>
 
-
-<script>
-export default {
-  name: 'HomeHeader',
-  data() {
-    return {
-      menuExpanded: false,
-    };
-  },
-  methods: {
-    changeMenu() {
-      this.expandMenu();
-      if (!this.menuExpanded) {
-        this.menuExpanded = true;
-      } else {
-        setTimeout(() => {
-          this.menuExpanded = false;
-        }, 600);
-      }
-    },
-
-    expandMenu() {
-      const icon = this.menuExpanded ? 'menu' : 'clear';
-      if (this.menuExpanded) {
-        this.hideMenu();
-      } else {
-        this.showMenu();
-      }
-      this.animateCss('.hamburger-menu', 'rotateIn', icon);
-    },
-
-    showMenu() {
-      this.animateCss('.nav-container', 'bounceInRight');
-      console.log('aqui estamos');
-    },
-
-    hideMenu() {
-      this.animateCss('.nav-container', 'bounceOutRight');
-    },
-
-    animateCss(element, transitionName, icon) {
-      const theClass = `animated ${transitionName}`;
-      $(element)
-        .removeClass(theClass)
-        .addClass(theClass)
-        .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
-          const $this = $(this);
-          $this.removeClass(theClass);
-          if (icon) $this.find('i').text(icon);
-        });
-    }
-  }
-};
-</script>

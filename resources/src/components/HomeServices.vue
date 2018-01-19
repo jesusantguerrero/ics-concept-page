@@ -3,15 +3,13 @@
       .service-contaner.col-md-4.justify-content-center(v-for="service in services")
         .service-card
           .card-custom-header
+            h2.title {{ service.plan }}
             p.great-text {{ service.megas}}
-              small.caption MB
-          .card-details
-            .detail-content
+              span.caption MB
           .card-content
-            h4.top-plan {{ service.plan }}
             p.price RD$ {{ service.price }} / mes
             .button-container
-              button.btn.call Seleccionar
+              button.btn.call-to-action.special Seleccionar
 </template>
 
 <style lang="sass">
@@ -21,7 +19,7 @@
     margin: 50px 0 20px 0
     padding: 20px
 
-  .service-contaner
+  .service-container
   .service-card
     display: flex
     flex-direction: column
@@ -29,33 +27,46 @@
     width: 100%
     max-width: 300px
     background: white
-    border: 1px solid #ccc
-    box-shadow: 2px 2px 4px transparentize(#272727, .8)
+    border: 1px solid #aaa
+    box-shadow: 3px 3px 4px transparentize(#000, .8)
     height: 400px
     border-radius: 2px
     margin: auto
     margin-bottom: 15px
     cursor: pointer
+    overflow: hidden
+    border-radius: 10px
     transition: all ease .4s
     &:hover
       transform: scale(1.01)
+
+    &:nth-child(2)
+      transform: scale(1.02)
+      border: 1px solid $contrast-color
 
     .card-custom-header
       height: 50%
       width: 100%
       text-align: center
-      background: dodgerblue
-      color: white
+      background: linear-gradient(to top, #48c6ef 0%, #6f86d6 100%);
       border-radius: 2px 2px 0 0
+      display: block
+      padding-top: 10px
+      .top-plan
+        color: white
+        font-size: 40px
+    .title
+      color: white
     .great-text
       color: white
-      margin: 0 0 0 0
       font:
-        size: 70px
+        size: 90px
+        weight: bolder
     .caption
       margin: 0 0 0 0
-    .card-detalis
+      font-size: 16px
     .card-content
+      height: 50%
       padding: 30px
       width: 100%
       text-align: center
@@ -63,23 +74,21 @@
     .call
       border-color: #fff
       cursor: pointer
-      background: transparentize(#000, .9)
       color: #fff
       transition: all ease .5s
       &:hover
         background: #fff
-        color: dodgerblue
-  .top-plan
-    color: $dark-color
+        color: $primary-color
   .button-container
     display: flex
     justify-content: center
-    margin: 0 0 0 0
+    margin: 10px 0
   .price
-    color: $contrast-color
+    color: $primary-color
+    margin: 0 0 0 0
     font:
-      size: 18px
-      weight: bolder
+      size: 22px
+
   @media (max-width: 768px)
     .service-card
       height: 360px

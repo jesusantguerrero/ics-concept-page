@@ -3,12 +3,11 @@
     .slide-show
       .slide-item(v-for="slide in slides")
         .slide-text.row
-          .col-md-6.justify-content-center
+          .col-md-6.offset-md-3.justify-content-center
             h2.slide-title {{ slide.title }}
-            small {{ slide.text }}
+            p {{ slide.text }}
             .row.justify-content-center.button-container
-              button.btn.call-to-action(href='#') {{slide.buttonText}}
-          .col-md-6
+
     ul.slide-indicator
       li.indicator-item(v-for="indicator in indicators")
         .line(:class="indicator", rol='low-indicator')
@@ -28,7 +27,7 @@
   const slides = [
     {
       title: 'Island Communication Services',
-      text: 'Nuestra meta es brindar internet a un mejor costo',
+      text: 'Nuestra meta es brindar internet de calidad a un mejor precio',
       buttonText: 'La Empresa'
     }, {
       title: 'Servicios',

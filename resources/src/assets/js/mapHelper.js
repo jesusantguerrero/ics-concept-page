@@ -25,7 +25,7 @@ const mainMap = {
     }
 
     this.map = new google.maps.Map(this.config.element, {
-      scrollwheel: true,
+      scrollwheel: false,
       center: ICS,
       controls: false,
       streetViewControl: false,

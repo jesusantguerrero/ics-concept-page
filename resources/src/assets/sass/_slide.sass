@@ -48,7 +48,7 @@ $slide-time: 30s
     color: $primary-color
     animation: slide-title-in $slide-time/3 linear infinite
     opacity: 0
-    margin-bottom: 2px
+    margin-bottom: 7px
 
   div
     width: 100%
@@ -151,8 +151,8 @@ $slide-time: 30s
 .call-to-action
   text-align: center
   padding: 0 15px
-  background: transparentize($contrast-color, .4)
-  border: 1px solid transparentize($contrast-color, .4)
+  background: $bg-primary
+  border: 1px solid transparentize($primary-color, .4)
   height: 48px
   font-size: 16px
   text-decoration: none
@@ -160,7 +160,7 @@ $slide-time: 30s
   padding: 10px 20px
   border-radius: 3px
   &:hover
-    background: lighten($contrast-color,5%)
+    background: $bg-primary
 
 /* smartphone
 @media (max-width: 768px)
@@ -174,6 +174,8 @@ $slide-time: 30s
 
     .indicator-item
       height: 2px
+    small
+      font-size: 16px
 
   .slide-indicator
     width: 80%
@@ -182,7 +184,7 @@ $slide-time: 30s
     padding-top: 60px
 
   .slide-title
-    font-size: 30px
+    font-size: 20px
     margin-bottom: 20px
   .page-info .brand-description p
     text-align: left
