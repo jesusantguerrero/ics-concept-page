@@ -7,7 +7,7 @@ const placeholders = {
 
 const defaultConfig = {
   element: document.getElementById('map'),
-  image: './assets/img/marcador.png',
+  image: './public/assets/img/marcador.png',
   template,
   key,
   placeholders,

@@ -9,11 +9,11 @@
           small.statement La red que te conecta con los tuyos
       .nav-container(:class="{expanded: menuExpanded}")
         nav.main-nav
-          li: a(href="#slide", @click="changeMenu").nav-button Inicio
-          li: a(href="#beneficios", @click="changeMenu").nav-button Beneficios
-          li: a(href="#servicios", @click="changeMenu").nav-button Servicios
-          li: a(href="#noticias", @click="changeMenu").nav-button Noticias
-          li: a(href="#contacto", @click="changeMenu").nav-button.special Contacto
+          li: a(href="#slide", @click="changeMenu").nav-button.btn-spy Inicio
+          li: a(href="#beneficios", @click="changeMenu").nav-button.btn-spy Beneficios
+          li: a(href="#servicios", @click="changeMenu").nav-button.btn-spy Servicios
+          li: a(href="#noticias", @click="changeMenu").nav-button.btn-spy Noticias
+          li: a(href="#contacto", @click="changeMenu").nav-button.special.btn-spy Contacto
       .hamburger-menu(@click="changeMenu"): i.material-icons menu
 </template>
 
